@@ -17,9 +17,9 @@ TOOL_NAME="LeEco Flash Tool"
 width=58
 height=15
 line_num=5
-VERSION="V1.0"
+VERSION="V1.1"
 AUTHOR="ganshuyu@le.com"
-DATE="2016-12-20"
+DATE="2016-12-28"
 
 #global vars
 menu_result=""
@@ -131,7 +131,7 @@ function show_countdown_infobox() {
     done
 }
 
-function authenticate_user() {
+function get_authentic_string_from_server() {
     ret=-1
     #get username in cache file.
     if [ ! -f "$USERNAME_CACHE_FILE" ]; then
@@ -179,7 +179,7 @@ function authenticate_user() {
     if [ $authen_result -ne 0 ]; then
         show_yesno "\Z5Username or Password ERROR! Try it again?"
         if [ $? -ne 1 ]; then
-            authenticate_user $1
+            get_authentic_string_from_server $1
         else
             clear_exit
         fi
@@ -375,7 +375,7 @@ function check_files() {
     fi
 }
 
-function unlocked_aboot() {
+function get_random(){
     ret=1
     fastboot oem gen-verify-serial 2>$RESULT_FILE
     grep "OKAY" $RESULT_FILE  1>/dev/null 2>/dev/null
@@ -383,25 +383,79 @@ function unlocked_aboot() {
         random=$(grep "flag" $RESULT_FILE)
         random=${random%flag*}
         random=${random#*flag}
-        authenticate_user $random
-        ret=$?
-        while read line
-        do {
-            if [ "$line" != "ret=0" ]; then
-                fastboot oem verify-unlock$line  1>/dev/null 2>/dev/null
-            fi
-        } done <$AUTHENTICATE_RESULT_FILE
-    else #
+        echo $random > $RESULT_FILE
         ret=0
-        fastboot oem unlock-go  1>/dev/null 2>/dev/null
-        fastboot flashing unlock_critical  1>/dev/null 2>/dev/null
+    fi
+
+    return $ret
+}
+
+function authentic_user_on_device(){
+    ret=0
+    #To be remove begin
+    version=0
+
+    fastboot oem device-info 2>$RESULT_FILE
+    grep "version:" $RESULT_FILE 1>/dev/null 2>/dev/null
+    if [ $? -eq 0 ]; then
+        version=1
+    fi
+
+    echo "" > $RESULT_FILE
+    while read line
+    do {
+        if [ "$line" != "ret=0" ]; then
+            if [ $version -eq 0 ]; then #To be remove.
+                fastboot oem verify-unlock$line 2>>$RESULT_FILE
+            else
+                fastboot oem authenticate$line 2>>$RESULT_FILE
+            fi
+        fi
+    } done <$AUTHENTICATE_RESULT_FILE
+    grep "FAILED" $RESULT_FILE 1>/dev/null 2>/dev/null
+    if [ $? -eq 0 ]; then
+        cat $RESULT_FILE
+        ret=1
+    fi
+
+    return $ret
+}
+
+function authentic_user(){
+    ret=0
+    get_random
+    if [ $? -eq 0 ]; then
+        random=`cat $RESULT_FILE`
+        get_authentic_string_from_server $random
+        if [ $? -eq 0 ]; then
+            authentic_user_on_device
+            ret=$?
+        fi
+    fi
+
+    return $ret
+}
+
+function unlocked_aboot() {
+    ret=0
+
+    fastboot oem device-info 2>$RESULT_FILE
+    grep "Device unlocked: true" $RESULT_FILE 1>/dev/null 2>/dev/null
+    if [ $? -ne 0 ]; then #Device is locked.
+        authentic_user
+        ret=$?
+    fi
+
+    if [ $ret -eq 0 ]; then
+        fastboot oem enable-flash 1>/dev/null 2>/dev/null
+        fastboot oem unlock-go 1>/dev/null 2>/dev/null
+        fastboot flashing unlock_critical 1>/dev/null 2>/dev/null
     fi
 
     return $ret
 }
 
 function flash_images() {
-
     unlocked_aboot
     if [ $? -ne 0 ]; then
         clear_exit
@@ -559,6 +613,20 @@ function unlock_fastboot_only(){
     fi
 }
 
+function disable_system_protection(){
+    enter_fastboot_mode
+    authentic_user
+
+    fastboot oem disable-verity 2>$RESULT_FILE
+    grep "FAILED" $RESULT_FILE 1>/dev/null 2>/dev/null
+    if [ $? -eq 0 ]; then
+        show_msgbox "Disable system protection fail!" "--no-cancel"
+    else
+        show_countdown_infobox "Success! Reboot system in" 3
+        fastboot reboot 1>/dev/null 2>/dev/null
+    fi
+}
+
 function start_to_work() {
     case $1 in
       1)
@@ -575,10 +643,7 @@ function start_to_work() {
       ;;
 
       3)
-        show_msgbox "Coming soon! Please expecting!" "--no-cancel"
-        if [ $? -eq 0 ]; then
-            main
-        fi
+        disable_system_protection
       ;;
 
       4)
