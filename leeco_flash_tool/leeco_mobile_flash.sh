@@ -443,13 +443,15 @@ function unlocked_aboot() {
     grep "Device unlocked: true" $RESULT_FILE 1>/dev/null 2>/dev/null
     if [ $? -ne 0 ]; then #Device is locked.
         authentic_user
-        ret=$?
     fi
 
-    if [ $ret -eq 0 ]; then
-        fastboot oem enable-flash 1>/dev/null 2>/dev/null
-        fastboot oem unlock-go 1>/dev/null 2>/dev/null
-        fastboot flashing unlock_critical 1>/dev/null 2>/dev/null
+    fastboot oem enable-flash 1>/dev/null 2>/dev/null
+    fastboot oem unlock-go 2>$RESULT_FILE
+    fastboot flashing unlock_critical 2>>$RESULT_FILE
+
+    grep "FAILED" $RESULT_FILE 1>/dev/null 2>/dev/null
+    if [ $? -eq 0 ]; then
+        ret=1
     fi
 
     return $ret
