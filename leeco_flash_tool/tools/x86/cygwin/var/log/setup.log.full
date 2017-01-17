@@ -1,0 +1,92 @@
+2017/01/17 14:32:05 Starting cygwin install, version 2.877
+2017/01/17 14:32:05 User has backup/restore rights
+2017/01/17 14:32:05 Current Directory: C:\Users\sygan\Desktop
+2017/01/17 14:32:05 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2017/01/17 14:32:11 source: network install
+2017/01/17 14:32:12 root: D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin system
+2017/01/17 14:32:13 Selected local directory: C:\Users\sygan\Desktop
+2017/01/17 14:32:13 net: Proxy
+Loaded cached mirror list
+get_url_to_membuf http://cygwin.com/mirrors.lst
+getUrlToStream http://cygwin.com/mirrors.lst
+2017/01/17 14:32:15 site: http://cygwin.mirror.constant.com/
+get_url_to_membuf http://cygwin.mirror.constant.com/x86/setup.xz.sig
+getUrlToStream http://cygwin.mirror.constant.com/x86/setup.xz.sig
+get_url_to_membuf http://cygwin.mirror.constant.com/x86/setup.xz
+getUrlToStream http://cygwin.mirror.constant.com/x86/setup.xz
+compress_xz::bid_xz: success: 48
+compress_xz::bid_xz: success: 48
+INSTALLED.DB version 3
+.ini setup_version is 2.877, our setup_version is 2.877
+Running preremove script for php
+2017/01/17 14:32:54 running: D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin\bin\bash.exe --norc --noprofile "/etc/preremove/php.sh"
+/etc/preremove/php.sh: line 1: cmp: command not found
+/etc/preremove/php.sh: line 6: cmp: command not found
+/etc/preremove/php.sh: line 11: cmp: command not found
+/etc/preremove/php.sh: line 16: cmp: command not found
+Running preremove script for php-json
+2017/01/17 14:32:54 Uninstalling php
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/etc/defaults/etc/httpd/conf.d/php7.conf
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/etc/defaults/etc/php-fpm.conf
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/etc/defaults/etc/php-fpm.d/www.conf
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/etc/defaults/etc/php.ini
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/etc/rc.d/init.d/php-fpm
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin\bin/cygphp7-7-0.dll
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin\bin/php-cgi.exe
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin\bin/php.exe
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin\bin/phpdbg.exe
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/sbin/php-fpm.exe
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/man/man1/phar.1.gz
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/man/man1/phar.phar.1.gz
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/man/man1/php-cgi.1.gz
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/man/man1/php.1.gz
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/man/man1/phpdbg.1.gz
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/man/man8/php-fpm.8.gz
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/pear/.registry/.channel.pecl.php.net/filter.reg
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/pear/.registry/.channel.pecl.php.net/hash.reg
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/pear/.registry/.channel.pecl.php.net/pdo.reg
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/pear/.registry/.channel.pecl.php.net/readline.reg
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/pear/.registry/.channel.pecl.php.net/session.reg
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/pear/doc/filter/CREDITS
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/pear/doc/hash/CREDITS
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/pear/doc/pdo/CREDITS
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/pear/doc/readline/CREDITS
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/pear/doc/session/CREDITS
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/php/fpm/status.html
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/var/lib/rebase/dynpath.d/php
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/var/lib/rebase/dynpath.d
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/var/lib/rebase
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/var/lib
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/php/fpm
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/php
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/pear/doc/session
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/pear/doc/readline
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/pear/doc/pdo
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/pear/doc/hash
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/pear/doc/filter
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/etc/rc.d/init.d
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/etc/rc.d
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/etc/defaults/etc/php-fpm.d
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/etc/defaults/etc/httpd/conf.d
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/etc/defaults/etc/httpd
+2017/01/17 14:32:54 Uninstalling php-json
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/etc/php.d/json.ini
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin\lib/php/20151012/json.dll
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/pear/doc/json/CREDITS
+unlink D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/pear/.registry/.channel.pecl.php.net/json.reg
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/pear/doc/json
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/pear/doc
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/pear/.registry/.channel.pecl.php.net
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/pear/.registry
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/usr/share/pear
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin\lib/php/20151012
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin\lib/php
+rmdir D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin/etc/php.d
+2017/01/17 14:32:54 Changing gid back to original
+Visited: 34 nodes out of 9100 while creating dependency order.
+Dependency order of packages: base-cygwin cygwin libattr1 libgcc1 libgmp10 libiconv2 libintl8 tzdata libstdc++6 terminfo libncursesw10 libreadline7 tzcode coreutils bash libffi6 libp11-kit0 libtasn1_6 p11-kit p11-kit-trust ca-certificates libdialog13 dialog findutils libpcre1 grep hostname libedit0 liblzma5 zlib0 libopenssl100 libxml2 openssl sed 
+2017/01/17 14:32:54 Changing gid to Administrators
+Program directory for program link: C:\ProgramData\Microsoft\Windows\Start Menu\Programs
+Desktop directory for desktop link: C:\Users\Public\Desktop
+2017/01/17 14:32:56 note: Uninstalls complete.
+2017/01/17 14:32:56 Ending cygwin install

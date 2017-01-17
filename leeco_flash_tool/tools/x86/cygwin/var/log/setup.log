@@ -1,0 +1,245 @@
+2017/01/13 17:21:58 Starting cygwin install, version 2.877
+2017/01/13 17:21:58 User has backup/restore rights
+2017/01/13 17:21:58 io_stream_cygfile: fopen(/etc/setup/setup.rc) failed 2 No such file or directory
+2017/01/13 17:21:58 Current Directory: C:\Users\sygan\Desktop
+2017/01/13 17:21:58 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2017/01/13 17:22:01 source: network install
+2017/01/13 17:22:02 root: d:\cygwin system
+2017/01/13 17:22:02 Selected local directory: C:\Users\sygan\Desktop
+2017/01/13 17:22:08 io_stream_cygfile: fopen(/etc/setup/setup.rc) failed 2 No such file or directory
+2017/01/13 17:22:08 Ending cygwin install
+2017/01/13 17:22:25 Starting cygwin install, version 2.877
+2017/01/13 17:22:25 User has backup/restore rights
+2017/01/13 17:22:25 io_stream_cygfile: fopen(/etc/setup/setup.rc) failed 2 No such file or directory
+2017/01/13 17:22:25 Current Directory: C:\Users\sygan\Desktop
+2017/01/13 17:22:25 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2017/01/13 17:22:27 source: network install
+2017/01/13 17:22:28 root: d:\cygwin system
+2017/01/13 17:22:29 Selected local directory: C:\Users\sygan\Desktop
+2017/01/13 17:22:31 net: Proxy
+2017/01/13 17:22:33 site: http://cygwin.mirror.constant.com/
+2017/01/13 17:22:36 io_stream_cygfile: fopen(/etc/setup/installed.db) failed 2 No such file or directory
+2017/01/13 17:22:37 io_stream_cygfile: fopen(/etc/setup/timestamp) failed 2 No such file or directory
+2017/01/13 17:25:01 Adding required dependency base-cygwin: Selecting version 3.8-1 for installation.
+2017/01/13 17:25:01 Adding required dependency coreutils: Selecting version 8.26-1 for installation.
+2017/01/13 17:25:01 Adding required dependency findutils: Selecting version 4.6.0-1 for installation.
+2017/01/13 17:25:01 Adding required dependency libattr1: Selecting version 2.4.46-1 for installation.
+2017/01/13 17:25:01 Adding required dependency libdialog13: Selecting version 1.3-2.20160828 for installation.
+2017/01/13 17:25:01 Adding required dependency libgcc1: Selecting version 5.4.0-1 for installation.
+2017/01/13 17:25:01 Adding required dependency libgmp10: Selecting version 6.1.1-1 for installation.
+2017/01/13 17:25:01 Adding required dependency libiconv2: Selecting version 1.14-3 for installation.
+2017/01/13 17:25:01 Adding required dependency libintl8: Selecting version 0.19.8.1-2 for installation.
+2017/01/13 17:25:01 Adding required dependency libncursesw10: Selecting version 6.0-8.20160917 for installation.
+2017/01/13 17:25:01 Adding required dependency libreadline7: Selecting version 7.0.1-1 for installation.
+2017/01/13 17:25:01 Adding required dependency libstdc++6: Selecting version 5.4.0-1 for installation.
+2017/01/13 17:25:01 Adding required dependency sed: Selecting version 4.2.2-3 for installation.
+2017/01/13 17:25:01 Adding required dependency terminfo: Selecting version 6.0-8.20160917 for installation.
+2017/01/13 17:25:01 Adding required dependency tzcode: Selecting version 2016j-1 for installation.
+2017/01/13 17:25:01 Adding required dependency tzdata: Selecting version 2016j-1 for installation.
+2017/01/13 17:25:01 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/base-cygwin/base-cygwin-3.8-1.tar.xz
+2017/01/13 17:25:02 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/base-files/base-files-4.2-3.tar.xz
+2017/01/13 17:25:04 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/bash/bash-4.3.48-8.tar.xz
+2017/01/13 17:25:06 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/coreutils/coreutils-8.26-1.tar.xz
+2017/01/13 17:25:07 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/cygwin/cygwin-2.6.0-1.tar.xz
+2017/01/13 17:25:08 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/dialog/dialog-1.3-2.20160828.tar.xz
+2017/01/13 17:25:09 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/findutils/findutils-4.6.0-1.tar.xz
+2017/01/13 17:25:10 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/hostname/hostname-3.13-1.tar.bz2
+2017/01/13 17:25:10 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/attr/libattr1/libattr1-2.4.46-1.tar.bz2
+2017/01/13 17:25:10 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/dialog/libdialog13/libdialog13-1.3-2.20160828.tar.xz
+2017/01/13 17:25:11 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/gcc/libgcc1/libgcc1-5.4.0-1.tar.xz
+2017/01/13 17:25:12 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/gmp/libgmp10/libgmp10-6.1.1-1.tar.xz
+2017/01/13 17:25:13 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/libiconv/libiconv2/libiconv2-1.14-3.tar.xz
+2017/01/13 17:25:14 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/gettext/libintl8/libintl8-0.19.8.1-2.tar.xz
+2017/01/13 17:25:14 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/ncurses/libncursesw10/libncursesw10-6.0-8.20160917.tar.xz
+2017/01/13 17:25:15 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/readline/libreadline7/libreadline7-7.0.1-1.tar.xz
+2017/01/13 17:25:16 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/gcc/libstdc++6/libstdc++6-5.4.0-1.tar.xz
+2017/01/13 17:25:17 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/mintty/mintty-2.7.2-0.tar.xz
+2017/01/13 17:25:18 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/ncurses/ncurses-6.0-7.20160806.tar.xz
+2017/01/13 17:25:20 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/sed/sed-4.2.2-3.tar.bz2
+2017/01/13 17:25:20 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/ncurses/terminfo/terminfo-6.0-8.20160917.tar.xz
+2017/01/13 17:25:21 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/tzcode/tzcode-2016j-1.tar.xz
+2017/01/13 17:25:22 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/tzdata/tzdata-2016j-1.tar.xz
+2017/01/13 17:25:24 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/base-cygwin/base-cygwin-3.8-1.tar.xz
+2017/01/13 17:25:24 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/base-files/base-files-4.2-3.tar.xz
+2017/01/13 17:25:24 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/bash/bash-4.3.48-8.tar.xz
+2017/01/13 17:25:24 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/coreutils/coreutils-8.26-1.tar.xz
+2017/01/13 17:25:25 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/cygwin/cygwin-2.6.0-1.tar.xz
+2017/01/13 17:25:26 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/dialog/dialog-1.3-2.20160828.tar.xz
+2017/01/13 17:25:27 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/findutils/findutils-4.6.0-1.tar.xz
+2017/01/13 17:25:29 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/hostname/hostname-3.13-1.tar.bz2
+2017/01/13 17:25:29 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/attr/libattr1/libattr1-2.4.46-1.tar.bz2
+2017/01/13 17:25:29 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/dialog/libdialog13/libdialog13-1.3-2.20160828.tar.xz
+2017/01/13 17:25:29 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/gcc/libgcc1/libgcc1-5.4.0-1.tar.xz
+2017/01/13 17:25:29 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/gmp/libgmp10/libgmp10-6.1.1-1.tar.xz
+2017/01/13 17:25:29 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/libiconv/libiconv2/libiconv2-1.14-3.tar.xz
+2017/01/13 17:25:29 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/gettext/libintl8/libintl8-0.19.8.1-2.tar.xz
+2017/01/13 17:25:29 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/ncurses/libncursesw10/libncursesw10-6.0-8.20160917.tar.xz
+2017/01/13 17:25:29 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/readline/libreadline7/libreadline7-7.0.1-1.tar.xz
+2017/01/13 17:25:29 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/gcc/libstdc++6/libstdc++6-5.4.0-1.tar.xz
+2017/01/13 17:25:29 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/mintty/mintty-2.7.2-0.tar.xz
+2017/01/13 17:25:29 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/ncurses/ncurses-6.0-7.20160806.tar.xz
+2017/01/13 17:25:29 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/sed/sed-4.2.2-3.tar.bz2
+2017/01/13 17:25:29 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/ncurses/terminfo/terminfo-6.0-8.20160917.tar.xz
+2017/01/13 17:25:29 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/tzcode/tzcode-2016j-1.tar.xz
+2017/01/13 17:25:30 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/tzdata/tzdata-2016j-1.tar.xz
+2017/01/13 17:25:33 Changing gid back to original
+2017/01/13 17:25:33 running: d:\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/000-cygwin-post-install.sh"
+2017/01/13 17:25:33 running: d:\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/base-files-mketc.sh"
+2017/01/13 17:25:34 running: d:\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/base-files-profile.sh"
+2017/01/13 17:25:35 running: d:\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/bash.sh"
+2017/01/13 17:25:35 running: d:\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/coreutils.sh"
+2017/01/13 17:25:35 running: d:\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/mintty.sh"
+2017/01/13 17:25:35 Changing gid to Administrators
+2017/01/13 17:26:12 note: Installation Complete
+2017/01/13 17:26:12 Ending cygwin install
+2017/01/13 17:27:01 Starting cygwin install, version 2.877
+2017/01/13 17:27:01 User has backup/restore rights
+2017/01/13 17:27:01 Current Directory: C:\Users\sygan\Desktop
+2017/01/13 17:27:01 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2017/01/13 17:27:04 source: network install
+2017/01/13 17:27:05 root: d:\cygwin system
+2017/01/13 17:27:06 Selected local directory: C:\Users\sygan\Desktop
+2017/01/13 17:27:07 net: Proxy
+2017/01/13 17:27:08 site: http://cygwin.mirror.constant.com/
+2017/01/13 17:28:33 Ending cygwin install
+2017/01/16 14:48:38 Starting cygwin install, version 2.877
+2017/01/16 14:48:38 User has backup/restore rights
+2017/01/16 14:48:38 io_stream_cygfile: fopen(/etc/setup/setup.rc) failed 2 No such file or directory
+2017/01/16 14:48:38 Current Directory: C:\Users\sygan\Desktop
+2017/01/16 14:48:38 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2017/01/16 14:48:40 source: network install
+2017/01/16 14:48:58 root: D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin system
+2017/01/16 14:48:59 Selected local directory: C:\Users\sygan\Desktop
+2017/01/16 14:50:15 net: Proxy
+2017/01/16 14:50:18 site: http://cygwin.mirror.constant.com/
+2017/01/16 14:50:56 Adding required dependency bash: Selecting version 4.4.5-1 for installation.
+2017/01/16 14:50:56 Adding required dependency cygwin: Selecting version 2.6.1-1 for installation.
+2017/01/16 14:50:56 Adding required dependency libpcre1: Selecting version 8.39-1 for installation.
+2017/01/16 14:50:59 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/bash/bash-4.4.5-1.tar.xz
+2017/01/16 14:51:03 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/cygwin/cygwin-2.6.1-1.tar.xz
+2017/01/16 14:51:05 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/grep/grep-2.27-1.tar.xz
+2017/01/16 14:51:07 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/pcre/libpcre1/libpcre1-8.39-1.tar.xz
+2017/01/16 14:51:09 running: D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin\bin\bash.exe --norc --noprofile "/etc/preremove/base-files.sh"
+2017/01/16 14:51:12 Uninstalling base-files
+2017/01/16 14:51:12 Uninstalling bash
+2017/01/16 14:51:12 Uninstalling cygwin
+2017/01/16 14:51:12 Uninstalling mintty
+2017/01/16 14:51:12 Uninstalling ncurses
+2017/01/16 14:51:12 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/bash/bash-4.4.5-1.tar.xz
+2017/01/16 14:51:12 io_stream_cygfile: fopen(/usr/bin/bash.exe) failed 13 Permission denied
+2017/01/16 14:51:12 Failed to open cygfile:///usr/bin/bash.exe for writing.
+2017/01/16 14:51:20 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/cygwin/cygwin-2.6.1-1.tar.xz
+2017/01/16 14:51:20 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/grep/grep-2.27-1.tar.xz
+2017/01/16 14:51:20 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/pcre/libpcre1/libpcre1-8.39-1.tar.xz
+2017/01/16 14:51:20 Changing gid back to original
+2017/01/16 14:51:20 running: D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/bash.sh"
+2017/01/16 14:51:21 Changing gid to Administrators
+2017/01/16 14:51:24 note: Installation Complete
+2017/01/16 14:51:24 Ending cygwin install
+2017/01/16 14:57:08 Starting cygwin install, version 2.877
+2017/01/16 14:57:08 User has backup/restore rights
+2017/01/16 14:57:08 Current Directory: C:\Users\sygan\Desktop
+2017/01/16 14:57:08 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2017/01/16 14:57:11 source: network install
+2017/01/16 14:57:12 root: D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin system
+2017/01/16 14:57:13 Selected local directory: C:\Users\sygan\Desktop
+2017/01/16 14:57:14 net: Proxy
+2017/01/16 14:57:15 site: http://cygwin.mirror.constant.com/
+2017/01/16 15:05:01 Ending cygwin install
+2017/01/16 18:27:37 Starting cygwin install, version 2.877
+2017/01/16 18:27:37 User has backup/restore rights
+2017/01/16 18:27:37 Current Directory: C:\Users\sygan\Desktop
+2017/01/16 18:27:37 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2017/01/16 18:27:39 source: network install
+2017/01/16 18:27:41 root: D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin system
+2017/01/16 18:27:43 Selected local directory: C:\Users\sygan\Desktop
+2017/01/16 18:27:44 net: Proxy
+2017/01/16 18:27:47 site: http://cygwin.mirror.constant.com/
+2017/01/16 18:28:48 Adding required dependency ca-certificates: Selecting version 2.10-1 for installation.
+2017/01/16 18:28:48 Adding required dependency libedit0: Selecting version 20130712-1 for installation.
+2017/01/16 18:28:48 Adding required dependency libffi6: Selecting version 3.2.1-1 for installation.
+2017/01/16 18:28:48 Adding required dependency liblzma5: Selecting version 5.2.2-1 for installation.
+2017/01/16 18:28:48 Adding required dependency libopenssl100: Selecting version 1.0.2j-1 for installation.
+2017/01/16 18:28:48 Adding required dependency libp11-kit0: Selecting version 0.22.1-1 for installation.
+2017/01/16 18:28:48 Adding required dependency libtasn1_6: Selecting version 4.9-1 for installation.
+2017/01/16 18:28:48 Adding required dependency libxml2: Selecting version 2.9.4-1 for installation.
+2017/01/16 18:28:48 Adding required dependency p11-kit: Selecting version 0.22.1-1 for installation.
+2017/01/16 18:28:48 Adding required dependency p11-kit-trust: Selecting version 0.22.1-1 for installation.
+2017/01/16 18:28:48 Adding required dependency zlib0: Selecting version 1.2.8-3 for installation.
+2017/01/16 18:28:50 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/ca-certificates/ca-certificates-2.10-1.tar.xz
+2017/01/16 18:28:51 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/libedit/libedit0/libedit0-20130712-1.tar.xz
+2017/01/16 18:28:52 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/libffi/libffi6/libffi6-3.2.1-1.tar.xz
+2017/01/16 18:28:53 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/xz/liblzma5/liblzma5-5.2.2-1.tar.xz
+2017/01/16 18:28:55 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/openssl/libopenssl100/libopenssl100-1.0.2j-1.tar.xz
+2017/01/16 18:28:56 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/p11-kit/libp11-kit0/libp11-kit0-0.22.1-1.tar.xz
+2017/01/16 18:28:57 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/libtasn1/libtasn1_6/libtasn1_6-4.9-1.tar.xz
+2017/01/16 18:28:59 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/libxml2/libxml2-2.9.4-1.tar.xz
+2017/01/16 18:29:00 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/p11-kit/p11-kit-0.22.1-1.tar.xz
+2017/01/16 18:29:01 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/p11-kit/p11-kit-trust/p11-kit-trust-0.22.1-1.tar.xz
+2017/01/16 18:29:03 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/php/php-7.0.14-2.tar.xz
+2017/01/16 18:29:04 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/zlib/zlib0/zlib0-1.2.8-3.tar.xz
+2017/01/16 18:29:06 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/noarch/release/ca-certificates/ca-certificates-2.10-1.tar.xz
+2017/01/16 18:29:06 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/libedit/libedit0/libedit0-20130712-1.tar.xz
+2017/01/16 18:29:06 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/libffi/libffi6/libffi6-3.2.1-1.tar.xz
+2017/01/16 18:29:06 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/xz/liblzma5/liblzma5-5.2.2-1.tar.xz
+2017/01/16 18:29:06 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/openssl/libopenssl100/libopenssl100-1.0.2j-1.tar.xz
+2017/01/16 18:29:06 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/p11-kit/libp11-kit0/libp11-kit0-0.22.1-1.tar.xz
+2017/01/16 18:29:06 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/libtasn1/libtasn1_6/libtasn1_6-4.9-1.tar.xz
+2017/01/16 18:29:06 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/libxml2/libxml2-2.9.4-1.tar.xz
+2017/01/16 18:29:06 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/p11-kit/p11-kit-0.22.1-1.tar.xz
+2017/01/16 18:29:07 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/p11-kit/p11-kit-trust/p11-kit-trust-0.22.1-1.tar.xz
+2017/01/16 18:29:07 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/php/php-7.0.14-2.tar.xz
+2017/01/16 18:29:07 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/zlib/zlib0/zlib0-1.2.8-3.tar.xz
+2017/01/16 18:29:07 Changing gid back to original
+2017/01/16 18:29:07 running: D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/ca-certificates.sh"
+2017/01/16 18:29:08 running: D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/libxml2.sh"
+2017/01/16 18:29:08 running: D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin\bin\bash.exe --norc --noprofile "/etc/postinstall/php.sh"
+2017/01/16 18:29:09 Changing gid to Administrators
+2017/01/16 18:29:14 note: Installation Complete
+2017/01/16 18:29:14 Ending cygwin install
+2017/01/16 18:44:06 Starting cygwin install, version 2.877
+2017/01/16 18:44:06 User has backup/restore rights
+2017/01/16 18:44:06 Current Directory: C:\Users\sygan\Desktop
+2017/01/16 18:44:06 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2017/01/16 18:44:08 source: network install
+2017/01/16 18:44:08 root: D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin system
+2017/01/16 18:44:09 Selected local directory: C:\Users\sygan\Desktop
+2017/01/16 18:44:10 net: Proxy
+2017/01/16 18:44:11 site: http://cygwin.mirror.constant.com/
+2017/01/16 18:45:08 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/php/php-json/php-json-7.0.14-2.tar.xz
+2017/01/16 18:45:10 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/php/php-json/php-json-7.0.14-2.tar.xz
+2017/01/16 18:45:10 Changing gid back to original
+2017/01/16 18:45:10 Changing gid to Administrators
+2017/01/16 18:45:12 note: Installation Complete
+2017/01/16 18:45:12 Ending cygwin install
+2017/01/17 14:02:15 Starting cygwin install, version 2.877
+2017/01/17 14:02:15 User has backup/restore rights
+2017/01/17 14:02:15 Current Directory: C:\Users\sygan\Desktop
+2017/01/17 14:02:15 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2017/01/17 14:02:18 source: network install
+2017/01/17 14:02:18 root: D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin system
+2017/01/17 14:02:19 Selected local directory: C:\Users\sygan\Desktop
+2017/01/17 14:02:20 net: Proxy
+2017/01/17 14:02:22 site: http://cygwin.mirror.constant.com/
+2017/01/17 14:05:49 Downloaded C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/openssl/openssl-1.0.2j-1.tar.xz
+2017/01/17 14:05:51 Extracting from file://C:\Users\sygan\Desktop/http%3a%2f%2fcygwin.mirror.constant.com%2f/x86/release/openssl/openssl-1.0.2j-1.tar.xz
+2017/01/17 14:05:51 Changing gid back to original
+2017/01/17 14:05:51 Changing gid to Administrators
+2017/01/17 14:05:54 note: Installation Complete
+2017/01/17 14:05:54 Ending cygwin install
+2017/01/17 14:32:05 Starting cygwin install, version 2.877
+2017/01/17 14:32:05 User has backup/restore rights
+2017/01/17 14:32:05 Current Directory: C:\Users\sygan\Desktop
+2017/01/17 14:32:05 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2017/01/17 14:32:11 source: network install
+2017/01/17 14:32:12 root: D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin system
+2017/01/17 14:32:13 Selected local directory: C:\Users\sygan\Desktop
+2017/01/17 14:32:13 net: Proxy
+2017/01/17 14:32:15 site: http://cygwin.mirror.constant.com/
+2017/01/17 14:32:54 running: D:\le_x2_fastboot_FEXCNFN4549501161D\tools\x86\cygwin\bin\bash.exe --norc --noprofile "/etc/preremove/php.sh"
+2017/01/17 14:32:54 Uninstalling php
+2017/01/17 14:32:54 Uninstalling php-json
+2017/01/17 14:32:54 Changing gid back to original
+2017/01/17 14:32:54 Changing gid to Administrators
+2017/01/17 14:32:56 note: Uninstalls complete.
+2017/01/17 14:32:56 Ending cygwin install

@@ -1,25 +1,21 @@
 #!/bin/bash
-#Environment
-export LD_LIBRARY_PATH=`pwd`/tools/linux/lib/x86_64-linux-gnu/:`pwd`/tools/linux/lib/lib32/
-PATH=`pwd`/tools/linux:$PATH
-SERVER_DAYLIBUILD_PATH="//10.148.67.23/dailybuild"
 
 #Temp files
 RESULT_FILE=$HOME/.result
 USERNAME_CACHE_FILE=$HOME/.username
 AUTHENTICATE_RESULT_FILE=$HOME/.AUTHENTICATE
 RELEASE_IMAGES_LIST=release_images_list.config
-DEFALUT_IMAGES_LIST=`pwd`/tools/linux/default_release_images_list.config
-authen_user_tool=`pwd`/tools/linux/authen_user.php
+DEFALUT_IMAGES_LIST=./tools/common/default_release_images_list.config
+authen_user_tool=./tools/common/authen_user.php
 
 #Tool Style
 TOOL_NAME="LeEco Flash Tool"
 width=58
 height=15
 line_num=5
-VERSION="V1.1"
+VERSION="V2.0"
 AUTHOR="ganshuyu@le.com"
-DATE="2016-12-28"
+DATE="2017-01-17"
 
 #global vars
 menu_result=""
@@ -32,6 +28,16 @@ partitions_list=""
 miss_files_list=""
 dailybuild_root="/mnt/dailybuild"
 sudo_passwd=""
+
+#Set up environment
+mount | grep cygwin > /dev/null
+if [ $? -ne 0 ]; then
+    export LD_LIBRARY_PATH=`pwd`/tools/linux/lib/x86_64-linux-gnu/:`pwd`/tools/linux/lib/lib32/
+    PATH=`pwd`/tools/linux:$PATH
+    SERVER_DAYLIBUILD_PATH="//10.148.67.23/dailybuild"
+else
+    runin_windows=true
+fi
 
 function clear_exit() {
     rm -rf $RESULT_FILE
@@ -665,20 +671,33 @@ function start_to_work() {
 }
 
 function show_menu() {
-    dialog --title "$TOOL_NAME" --clear --menu "\n\n Choose one" $height $width $line_num \
-      \[1\] "Flash all images" \
-      \[2\] "Flash all images online" \
-      \[3\] "Disable system protection" \
-      \[4\] "Unlock fastboot only" \
-      \[5\] "About" 2>$RESULT_FILE
+    if [ $runin_windows = "true" ]; then
+        dialog --title "$TOOL_NAME" --clear --menu "\n\n Choose one" $height $width $line_num \
+          \[1\] "Flash all images" \
+          \[2\] "Disable system protection" \
+          \[3\] "Unlock fastboot only" \
+          \[4\] "About" 2>$RESULT_FILE
+    else
+        dialog --title "$TOOL_NAME" --clear --menu "\n\n Choose one" $height $width $line_num \
+          \[1\] "Flash all images" \
+          \[2\] "Flash all images online" \
+          \[3\] "Disable system protection" \
+          \[4\] "Unlock fastboot only" \
+          \[5\] "About" 2>$RESULT_FILE
+    fi
     if [ 0 -ne $? ]; then
-        echo "Exit"
         clear_exit
     fi
     menu_result=`cat $RESULT_FILE`
     #Delete "[]"
     menu_result=${menu_result#*[}
     menu_result=${menu_result%]*}
+
+    if [ $runin_windows = "true" ]; then
+        if [ $menu_result -ge 2 ]; then
+            menu_result=$((menu_result+1))
+        fi
+    fi
 }
 
 function main() {
