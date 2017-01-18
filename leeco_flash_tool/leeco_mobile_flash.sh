@@ -5,17 +5,17 @@ RESULT_FILE=$HOME/.result
 USERNAME_CACHE_FILE=$HOME/.username
 AUTHENTICATE_RESULT_FILE=$HOME/.AUTHENTICATE
 RELEASE_IMAGES_LIST=release_images_list.config
-DEFALUT_IMAGES_LIST=./tools/common/default_release_images_list.config
-authen_user_tool=./tools/common/authen_user.php
+DEFALUT_IMAGES_LIST=`pwd`/tools/common/default_release_images_list.config
+AUTHEN_USER_TOOL=`pwd`/tools/common/authen_user.php
 
 #Tool Style
 TOOL_NAME="LeEco Flash Tool"
 width=58
 height=15
 line_num=5
-VERSION="V2.0"
+VERSION="V2.1"
 AUTHOR="ganshuyu@le.com"
-DATE="2017-01-17"
+DATE="2017-01-18"
 
 #global vars
 menu_result=""
@@ -37,6 +37,11 @@ if [ $? -ne 0 ]; then
     SERVER_DAYLIBUILD_PATH="//10.148.67.23/dailybuild"
 else
     runin_windows=true
+    RESULT_FILE=/cygdrive/d/.result
+    USERNAME_CACHE_FILE=/cygdrive/d/.username
+    AUTHENTICATE_RESULT_FILE=/cygdrive/d/.AUTHENTICATE
+    DEFALUT_IMAGES_LIST=./tools/common/default_release_images_list.config
+    AUTHEN_USER_TOOL=./tools/common/authen_user.php
 fi
 
 function clear_exit() {
@@ -170,7 +175,7 @@ function get_authentic_string_from_server() {
     else
         show_infobox "Checking username and password..."
         #authenticate
-        php $authen_user_tool $user_name $pass_word $1 1>$AUTHENTICATE_RESULT_FILE
+        php $AUTHEN_USER_TOOL $user_name $pass_word $1 1>$AUTHENTICATE_RESULT_FILE
         cat $AUTHENTICATE_RESULT_FILE | grep "timed out" 1>/dev/null 2>/dev/null
         if [ $? -eq 0 ]; then
             show_infobox "Time out. Please check the network!"
@@ -453,7 +458,7 @@ function unlocked_aboot() {
 
     fastboot oem enable-flash 1>/dev/null 2>/dev/null
     fastboot oem unlock-go 2>$RESULT_FILE
-    fastboot flashing unlock_critical 2>>$RESULT_FILE
+    fastboot flashing unlock_critical 1>/dev/null 2>/dev/null
 
     grep "FAILED" $RESULT_FILE 1>/dev/null 2>/dev/null
     if [ $? -eq 0 ]; then
