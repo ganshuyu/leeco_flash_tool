@@ -28,6 +28,7 @@ partitions_list=""
 miss_files_list=""
 dailybuild_root="/mnt/dailybuild"
 sudo_passwd=""
+runin_windows=false
 
 #Set up environment
 mount | grep cygwin > /dev/null
