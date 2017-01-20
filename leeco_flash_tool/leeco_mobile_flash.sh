@@ -13,9 +13,9 @@ TOOL_NAME="LeEco Flash Tool"
 width=58
 height=15
 line_num=5
-VERSION="V2.1"
+VERSION="V2.2"
 AUTHOR="ganshuyu@le.com"
-DATE="2017-01-18"
+DATE="2017-01-20"
 
 #global vars
 menu_result=""
@@ -34,8 +34,9 @@ runin_windows=false
 mount | grep cygwin > /dev/null
 if [ $? -ne 0 ]; then
     export LD_LIBRARY_PATH=`pwd`/tools/linux/lib/x86_64-linux-gnu/:`pwd`/tools/linux/lib/lib32/
-    PATH=`pwd`/tools/linux:$PATH
+    export PATH=`pwd`/tools/linux/bin:$PATH
     SERVER_DAYLIBUILD_PATH="//10.148.67.23/dailybuild"
+    chmod 755 tools -R 1>/dev/null 2>/dev/null
 else
     runin_windows=true
     RESULT_FILE=/cygdrive/d/.result
@@ -144,7 +145,7 @@ function show_countdown_infobox() {
 }
 
 function get_authentic_string_from_server() {
-    ret=-1
+    local ret=-1
     #get username in cache file.
     if [ ! -f "$USERNAME_CACHE_FILE" ]; then
       echo "First time flash."
@@ -388,7 +389,7 @@ function check_files() {
 }
 
 function get_random(){
-    ret=1
+    local ret=1
     fastboot oem gen-verify-serial 2>$RESULT_FILE
     grep "OKAY" $RESULT_FILE  1>/dev/null 2>/dev/null
     if [ $? -eq 0 ]; then
@@ -403,7 +404,7 @@ function get_random(){
 }
 
 function authentic_user_on_device(){
-    ret=0
+    local ret=0
     #To be remove begin
     version=0
 
@@ -426,7 +427,6 @@ function authentic_user_on_device(){
     } done <$AUTHENTICATE_RESULT_FILE
     grep "FAILED" $RESULT_FILE 1>/dev/null 2>/dev/null
     if [ $? -eq 0 ]; then
-        cat $RESULT_FILE
         ret=1
     fi
 
@@ -434,7 +434,7 @@ function authentic_user_on_device(){
 }
 
 function authentic_user(){
-    ret=0
+    local ret=0
     get_random
     if [ $? -eq 0 ]; then
         random=`cat $RESULT_FILE`
@@ -449,7 +449,7 @@ function authentic_user(){
 }
 
 function unlocked_aboot() {
-    ret=0
+    local ret=0
 
     fastboot oem device-info 2>$RESULT_FILE
     grep "Device unlocked: true" $RESULT_FILE 1>/dev/null 2>/dev/null
@@ -545,7 +545,7 @@ function get_sudo_password() {
 function mount_dailybuild() {
     error_str=""
     test -d $dailybuild_root
-    ret=$?
+    local ret=$?
 
     #mkdir $dailybuild_root
     while [ $ret -ne 0 ]; do
@@ -592,7 +592,7 @@ function mount_dailybuild() {
 
 function goto_release_dir()
 {
-    ret=1
+    local ret=1
     dir="$dailybuild_root/"
     dialog --title "$TOOL_NAME" "--no-cancel" --msgbox \
         "\n\n   Usage:\
