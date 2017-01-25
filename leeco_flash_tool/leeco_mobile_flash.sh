@@ -9,13 +9,13 @@ DEFALUT_IMAGES_LIST=`pwd`/tools/common/default_release_images_list.config
 AUTHEN_USER_TOOL=`pwd`/tools/common/authen_user.php
 
 #Tool Style
-TOOL_NAME="LeEco Flash Tool"
 width=58
 height=15
 line_num=5
-VERSION="V2.2"
+VERSION="V2.3"
 AUTHOR="ganshuyu@le.com"
-DATE="2017-01-20"
+DATE="2017-01-25"
+TOOL_NAME="LeEco Flash Tool $VERSION"
 
 #global vars
 menu_result=""
@@ -34,7 +34,7 @@ runin_windows=false
 mount | grep cygwin > /dev/null
 if [ $? -ne 0 ]; then
     export LD_LIBRARY_PATH=`pwd`/tools/linux/lib/x86_64-linux-gnu/:`pwd`/tools/linux/lib/lib32/
-    export PATH=`pwd`/tools/linux/bin:$PATH
+    export PATH=$PATH:`pwd`/tools/linux/bin
     SERVER_DAYLIBUILD_PATH="//10.148.67.23/dailybuild"
     chmod 755 tools -R 1>/dev/null 2>/dev/null
 else
