@@ -28,7 +28,8 @@ partitions_list=""
 miss_files_list=""
 dailybuild_root="/mnt/dailybuild"
 sudo_passwd=""
-runin_windows=false
+runin_windows="false"
+auto_flash_flag="false"
 
 #Set up environment
 mount | grep cygwin > /dev/null
@@ -38,10 +39,17 @@ if [ $? -ne 0 ]; then
     SERVER_DAYLIBUILD_PATH="//10.148.67.23/dailybuild"
     chmod 755 tools -R 1>/dev/null 2>/dev/null
 else
-    runin_windows=true
-    RESULT_FILE=/cygdrive/d/.result
-    USERNAME_CACHE_FILE=/cygdrive/d/.username
-    AUTHENTICATE_RESULT_FILE=/cygdrive/d/.AUTHENTICATE
+    temp_path=d
+    if [ -f ./tools/x86/cygwin/etc/temp_path ]; then
+        sed -i 's/\\/\//g' ./tools/x86/cygwin/etc/temp_path
+        sed -i 's/://g' ./tools/x86/cygwin/etc/temp_path
+        sed -i 's/ //g' ./tools/x86/cygwin/etc/temp_path
+        temp_path=`cat ./tools/x86/cygwin/etc/temp_path`
+    fi
+    runin_windows="true"
+    RESULT_FILE=/cygdrive/$temp_path/.result
+    USERNAME_CACHE_FILE=/cygdrive/$temp_path/.username
+    AUTHENTICATE_RESULT_FILE=/cygdrive/$temp_path/.AUTHENTICATE
     DEFALUT_IMAGES_LIST=./tools/common/default_release_images_list.config
     AUTHEN_USER_TOOL=./tools/common/authen_user.php
 fi
@@ -146,31 +154,35 @@ function show_countdown_infobox() {
 
 function get_authentic_string_from_server() {
     local ret=-1
-    #get username in cache file.
-    if [ ! -f "$USERNAME_CACHE_FILE" ]; then
-      echo "First time flash."
-    else
-      user_name=`cat $USERNAME_CACHE_FILE` 1>/dev/null 2>/dev/null
+
+    #for auto flash image requirement.
+    if [ $auto_flash_flag = "false" ]; then
+        #get username in cache file.
+        if [ ! -f "$USERNAME_CACHE_FILE" ]; then
+          echo "First time flash."
+        else
+          user_name=`cat $USERNAME_CACHE_FILE` 1>/dev/null 2>/dev/null
+        fi
+
+        #Get username.
+        dialog --title "$TOOL_NAME" --inputbox \
+            "\n\n\nPlease input your Email name (without @le.com):" $height $width $user_name 2>$USERNAME_CACHE_FILE
+        if [ $? -ne 0 ]; then
+            clear_exit
+        fi
+
+        user_name=`cat $USERNAME_CACHE_FILE` 1>/dev/null 2>/dev/null
+
+        #Get password
+        dialog  --title  "$TOOL_NAME"  --insecure  --passwordbox \
+          "\n\n\nPlease input your Email password:" $height $width 2>$RESULT_FILE
+        if [ $? -ne 0 ]; then
+            clear_exit
+        fi
+
+        pass_word=`cat $RESULT_FILE`
+        rm $RESULT_FILE -rf
     fi
-
-    #Get username.
-    dialog --title "$TOOL_NAME" --inputbox \
-        "\n\n\nPlease input your Email name (without @le.com):" $height $width $user_name 2>$USERNAME_CACHE_FILE
-    if [ $? -ne 0 ]; then
-        clear_exit
-    fi
-
-    user_name=`cat $USERNAME_CACHE_FILE` 1>/dev/null 2>/dev/null
-
-    #Get password
-    dialog  --title  "$TOOL_NAME"  --insecure  --passwordbox \
-      "\n\n\nPlease input your Email password:" $height $width 2>$RESULT_FILE
-    if [ $? -ne 0 ]; then
-        clear_exit
-    fi
-
-    pass_word=`cat $RESULT_FILE`
-    rm $RESULT_FILE -rf
 
     if [ "$user_name" = "" ] || [ "$pass_word" = "" ]; then
         authen_result=-1
@@ -189,15 +201,26 @@ function get_authentic_string_from_server() {
         authen_result=${authen_result#*ret=}
     fi
 
-    if [ $authen_result -ne 0 ]; then
-        show_yesno "\Z5Username or Password ERROR! Try it again?"
-        if [ $? -ne 1 ]; then
-            get_authentic_string_from_server $1
+    if [ $auto_flash_flag = "false" ]; then
+        #Only show dialog in nonautomatic mode.
+        if [ $authen_result -ne 0 ]; then
+            show_yesno "\Z5Username or Password ERROR! Try it again?"
+            if [ $? -ne 1 ]; then
+                get_authentic_string_from_server $1
+            else
+                clear_exit
+            fi
         else
-            clear_exit
+            ret=0
         fi
     else
-        ret=0
+        if [ $authen_result -ne 0 ]; then
+            show_infobox "Error: Username or Password ERROR!"
+            sleep 3
+            clear_exit
+        else
+            ret=0
+        fi
     fi
 
     return $ret
@@ -360,31 +383,38 @@ function check_files() {
     done
 
     if [ ${#miss_files_list[0]} -ne 0 ]; then
-      show_yesno "Warning: Missing ${#miss_files_list[@]} images! Continue?"
-      if [ $? -ne 0 ]; then
-        clear_exit
-      fi
+        if [ $auto_flash_flag = "true" ] ;then
+            show_msgbox "Error: Missing ${#miss_files_list[@]} images! Exit..."
+            clear_exit
+        else
+          show_yesno "Warning: Missing ${#miss_files_list[@]} images! Continue?"
+          if [ $? -ne 0 ]; then
+            clear_exit
+          fi
+        fi
     fi
 
-    show_pausebox "Format/erase userdata?" 5 "--cancel-label No"
-    #Remove userdata.img from the list
-    if [ $? -ne 0 ]; then
-        keep_userdata="true"
-        for ((i=0; i<${#images_list[@]}; i++));do
-            if [ "${images_list[i]}" = "userdata.img" ]; then
-                images_list[i]=""
-                partitions_list[i]=""
-                break
-            fi
-        done
-    fi
+    if [ $auto_flash_flag = "false" ] ;then
+        show_pausebox "Format/erase userdata?" 5 "--cancel-label No"
+        #Remove userdata.img from the list
+        if [ $? -ne 0 ]; then
+            keep_userdata="true"
+            for ((i=0; i<${#images_list[@]}; i++));do
+                if [ "${images_list[i]}" = "userdata.img" ]; then
+                    images_list[i]=""
+                    partitions_list[i]=""
+                    break
+                fi
+            done
+        fi
 
-    #Remove the empty element from list
-    remove_empty_element
+        #Remove the empty element from list
+        remove_empty_element
 
-    if [ ${#images_list[0]} -eq 0 ]; then
-        show_msgbox "Nothing to be flashed. Exit..."
-        clear_exit
+        if [ ${#images_list[0]} -eq 0 ]; then
+            show_msgbox "Nothing to be flashed. Exit..."
+            clear_exit
+        fi
     fi
 }
 
@@ -707,10 +737,20 @@ function show_menu() {
 }
 
 function main() {
-    show_menu
-    start_to_work $menu_result
-    clear_exit
+    if [ "$1" == "" ] && [ "$2" == "" ]; then
+        show_menu
+        start_to_work $menu_result
+        clear_exit
+    else
+        user_name=$1
+        pass_word=$2
+        auto_flash_flag=true
+
+        get_default_images_list
+        check_files
+        flash_images
+    fi
 }
 
-main
+main "$1" "$2"
 
